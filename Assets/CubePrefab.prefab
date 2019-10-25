@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61120128485895486}
   - component: {fileID: 114989226481628914}
   - component: {fileID: 70747967213300466}
-  - component: {fileID: 82946835804424848}
+  - component: {fileID: 82431866055293174}
   m_Layer: 0
   m_Name: CubePrefab
   m_TagString: BlockTouch
@@ -105,7 +105,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.9999999, y: 1.9999999}
   m_Direction: 0
---- !u!82 &82946835804424848
+--- !u!82 &82431866055293174
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -115,8 +115,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5601bc9bcd233e24e86b730ec79d8191, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

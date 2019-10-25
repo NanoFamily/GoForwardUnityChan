@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
-
     AudioSource audioSource;
 
     // 地面の位置
@@ -30,11 +29,21 @@ public class CubeController : MonoBehaviour
         // キューブを移動させる
         transform.Translate(this.speed, 0, 0);
 
-        //キューブか判定
+        // 画面外に出たら破棄する
+        if (transform.position.x < this.deadline)
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
         if (tag == "BlockTouch")
         {
-            AudioClip clip = gameObject.GetComponent<AudioSource>().clip;
-            gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
+            audioSource = this.GetComponent<AudioSource>();
+            this.GetComponent<AudioSource>().PlayOneShot(audioSource.clip);
         }
 
         if (tag == "UnityChanTouch")
@@ -45,15 +54,9 @@ public class CubeController : MonoBehaviour
 
         if (tag == "GroundTouch")
         {
-            AudioClip clip = gameObject.GetComponent<AudioSource>().clip;
-            gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
+            audioSource = this.GetComponent<AudioSource>();
+            audioSource.Play();
 
-        }
-
-        // 画面外に出たら破棄する
-        if (transform.position.x < this.deadline)
-        {
-            Destroy(gameObject);
         }
     }
 }
